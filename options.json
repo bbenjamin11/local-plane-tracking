@@ -1,0 +1,27 @@
+{
+    "network":{
+        "peers":   [{
+            "api_host": "localhost",
+            "api_port": 7050,
+            "api_port_tls": 7051,
+            "id": "vp0",
+            "api_url": "http://localhost:7050"
+        }],
+        "username":  [{
+            "enrollId": "jim",
+            "enrollSecret": "6avZQLwcUe9b"
+        }],
+        "options": {
+            "quiet": true,
+            "timeout": 60000,
+            "tls":false
+        }
+    },
+    "chaincode":{
+				"zip_url": "https://github.com/bbenjamin11/chaincode-plane-tracking/archive/master.zip",
+				"unzip_dir": "chaincode-plane-tracking-master",
+				"git_url": "https://github.com/bbenjamin11/chaincode-plane-tracking",
+				"deployed_name" : "1bc6226fb0b3fdf418e91460014f19057d6e2a2afcb3a2edf7af1db01ffe2029f76dbe270e9b4fd8fbbd81e8061de4eb2da3d7f968af4d39096d32b6e4882212"
+
+    }
+}

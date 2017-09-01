@@ -4,7 +4,7 @@
 ## Prerequisites
 * [Docker](https://www.docker.com/) - Build, Ship, and Run Any App, Anywhere
    - Run Docker For Windows.exe
-* [node.js] - evented I/O for the backend
+* [node.js](https://nodejs.org/en/) - evented I/O for the backend
 ------------------------------------
 ## Installation and configuration
 ##### BlockChain
@@ -23,7 +23,7 @@ Create Docker tags.
 ```
 Launch Blockchain.
 ```sh
-> cd DockerHyperledger0.6
+> cd local-plane-tracking\DockerHyperledger0.6
 > docker-compose -f 4-peers.yml up
 ```
 => Do not kill the PowerShell window, open a new PowerShell to continue.
@@ -43,7 +43,7 @@ d3f9d72b4ef3cbbe0f7989bc9e7a9493fc0bbd619d25daa919510edd965f33902d950043267a012b
 
 ##### Server
 Copy the chaincode name in your server file option.json :
---	Open : BlockchainHF06\web-plane-tracking\option.json
+--	Open : local-plane-tracking\option.json
 --	Replace : chaincode.deploey_name by your current chaincode name
 
 Config the ip adress :
@@ -52,7 +52,7 @@ Config the ip adress :
 > ipconfig
 ```
 -- Copy the ip adress in your server file setup.json
-* Open : C:\Users\BlockchainHF06\web-plane-tracking\setup.json
+* Open : local-plane-tracking\setup.json
 * Replace hostname with your IP
 * Chose your port
 
@@ -61,7 +61,7 @@ Config the ip adress :
 
 Launch the server
 ```sh
-	> cd C:\Users\BlockchainHF06\web-plane-tracking
+	> cd local-plane-tracking
 	> node .\app.js
 	Server Up - 192.168.43.48:8080
 	Websocket Up

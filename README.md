@@ -23,7 +23,7 @@ Create Docker tags.
 ```
 Launch Blockchain.
 ```sh
-> cd local-plane-tracking\DockerHyperledger0.6
+> cd local-plane-tracking\docker-compose-file
 > docker-compose -f 4-peers.yml up
 ```
 => Do not kill the PowerShell window, open a new PowerShell to continue.
@@ -59,6 +59,11 @@ Config the ip adress :
 -----------------------------------
 ## Run the app
 
+Before the first launch install the npm package
+```sh
+	> cd local-plane-tracking
+	> npm install -i
+```
 Launch the server
 ```sh
 	> cd local-plane-tracking

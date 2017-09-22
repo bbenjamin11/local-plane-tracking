@@ -221,7 +221,7 @@ function cb_deployed(e, d){
 
 		wss.broadcast = function broadcast(data) {											//send to all connections
 			wss.clients.forEach(function each(client) {
-				console.log("client : ", client);
+				// console.log("client : ", client);
 				try{
 					data.v = "2";
 					client.send(JSON.stringify(data));

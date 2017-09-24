@@ -14,7 +14,7 @@
 /*
 * Local environment
 */
-var host =  "192.168.1.103";
+var host =  "localhost";
 var port = "8080"
 
 /*

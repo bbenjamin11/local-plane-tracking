@@ -24,12 +24,12 @@ Create Docker tags.
 Launch Blockchain.
 ```sh
 > cd local-plane-tracking\docker-compose-file
-> docker-compose -f 4-peers.yml up
+> docker-compose -f 1-peer.yml up
 ```
 => Do not kill the PowerShell window, open a new PowerShell to continue.
 On the new PowerShell window go on your blockchain virtual environment.
 ```sh
-> docker exec -it dockerhyperledger06_vp0_1 bash
+> docker exec -it dockercomposefile_vp0_1 bash
 ```
 You are now on virtual environment.
 Deploy the chaincode :
@@ -45,16 +45,6 @@ d3f9d72b4ef3cbbe0f7989bc9e7a9493fc0bbd619d25daa919510edd965f33902d950043267a012b
 Copy the chaincode name in your server file option.json :
 --	Open : local-plane-tracking\option.json
 --	Replace : chaincode.deploey_name by your current chaincode name
-
-Config the ip adress :
---Get yout adress ip in your local network
-```sh
-> ipconfig
-```
--- Copy the ip adress in your server file setup.json
-* Open : local-plane-tracking\setup.json
-* Replace hostname with your IP
-* Chose your port
 
 -----------------------------------
 ## Run the app
@@ -81,16 +71,10 @@ Each time yout computer restart you will have to launch the server again (the bl
 If the server failed to launch restart the blockchain docker VM :
 * Stop all your Docker containers.
 ```sh
-	> docker stop dockerhyperledger06_vp0_1
-	> docker stop dockerhyperledger06_vp1_1
-	> docker stop dockerhyperledger06_vp2_1
-	> docker stop dockerhyperledger06_vp3_1
+	> docker stop dockercomposefile_vp0_1
 ```
 * Start all your Docker containers.
 ```sh
-	> docker start dockerhyperledger06_vp0_1
-	> docker start dockerhyperledger06_vp1_1
-	> docker start dockerhyperledger06_vp2_1
-	> docker start dockerhyperledger06_vp3_1
+	> docker start dockercomposefile_vp0_1
 ```
 * Launch your server again.

@@ -79,6 +79,7 @@ module.exports.process_msg = function(ws, data, owner){
 				ibc.block_stats(key, function(e, stats){
 					if(e == null){
 						stats.height = key;
+						console.log("sendMsg : " + "{msg: \"chainstats\", e: e, chainstats: chain_stats, blockstats: stats}");
 						sendMsg({msg: "chainstats", e: e, chainstats: chain_stats, blockstats: stats});
 					}
 					cb(null);

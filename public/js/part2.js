@@ -164,12 +164,14 @@ function escapeHtml(str) {
 // Socket Stuff
 // =================================================================================
 function connect_to_server(){
+
 	var connected = false;
 	connect();
 
 	function connect(){
 		console.log("ws://" + bag.setup.SERVER.EXTURI);
-		var wsUri = "ws://" + bag.setup.SERVER.EXTURI;
+
+		var wsUri = "ws://" + window.location.host ; //bag.setup.SERVER.EXTURI;
 		ws = new WebSocket(wsUri);
 		ws.onopen = function(evt) { onOpen(evt); };
 		ws.onclose = function(evt) { onClose(evt); };
@@ -200,7 +202,7 @@ function connect_to_server(){
 	function onMessage(msg){
 		try{
 			var data = JSON.parse(msg.data);
-
+			console.log(data);
 			if(data.msg === 'allBatches'){
 				console.log("---- ", data);
 				build_Batches(data.batches, null);

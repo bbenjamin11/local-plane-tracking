@@ -1,19 +1,24 @@
-FROM    node:5
+# Image de base
+FROM debian:jessie
 
-WORKDIR /
-RUN apt-get update
-RUN apt-get install haproxy -y
-COPY haproxy.cfg /etc/haproxy/haproxy.cfg
+# Installation de curl avec apt-get
+RUN apt-get update \
+&& apt-get install nodejs
 
-RUN mkdir -p /opt/certis
-COPY blockchain.ibm.com.pem /opt/certs/blockchain.ibm.com.pem
+# Ajout du fichier de dépendances package.json
+ADD . /app/
 
-RUN mkdir -p /cp-demo
-COPY . /cp-demo/
-RUN cd /cp-demo ; npm install --production
-WORKDIR /cp-demo
+# Changement du repertoire courant
+WORKDIR /app
 
-RUN chmod +x start.sh
+# Installation des dépendances
+# RUN npm install -i
 
-CMD ["start.sh"]
+# On expose le port 8080
+EXPOSE 8080
 
+# On partage un dossier de log
+VOLUME /app/log
+
+# On lance le serveur quand on démarre le conteneur
+CMD node app.js
